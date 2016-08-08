@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	#circle{
+		position:absolute;
+		width:200px;
+		height:200px;
+		border:1px solid gray;
+		border-radius:100%;
+
+	}
+	#s{
+		
+		width:2px;
+		height:80px;
+		background-color:red;
+		position: absolute;
+		left:98px;
+		top:18px;
+	
+		transform-origin:bottom;
+
+	}
+
+	#m{
+		width:3px;
+		height:80px;
+		background-color:lightgray;
+		position:absolute;
+		left:98px;
+		top:18px;
+		transform-origin:bottom;
+	}
+
+	#h{
+		width:2px;
+		height:60px;
+		background-color:black;
+		position:absolute;
+		left:98px;
+		top:38px;
+		transform-origin:bottom;
+	}
+
+
+	</style>
+</head>
+<body onload="tick()">
+<div id="circle">
+	
+	<div id="s"></div>
+	<div id="m"></div>
+	<div id="h"></div>
+</div>
+
+
+
+
+<script>
+/*	count=-1;
+	setInterval("myFunck()",1000);
+	/*setTimeOut("myFunck()",7000);*/
+	/*function myFunck(){
+		count++;
+		document.write(count);
+		document.close();
+	};
+
+myFunck();
+*/
+
+/*var text = "cislo PI -"+Math.PI;
+text+="\n cislo E-" + Math.E;
+text+="\n slucaynoe cislo-"+Math.floor(Math.random()*11);
+alert(text);*/
+
+
+function tick(){
+	var d = new Date();
+    var s = d.getSeconds();
+    document.getElementById('s').style.cssText="transform:rotate("+s*6+"deg);";
+
+    var m = d.getMinutes();
+  
+    document.getElementById('m').style.cssText="transform:rotate("+m*6+"deg);";
+
+  	var h = d.getHours();
+   h = 30*(h % 12 + m/60)
+    document.getElementById('h').style.cssText="transform:rotate("+h+"deg);";
+
+       
+    setTimeout(tick, 1000);
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
